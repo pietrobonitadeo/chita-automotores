@@ -18,7 +18,8 @@ interface Car {
   km?: string
   combustible: string
   tipo: "nuevo" | "usado"
-  color: string // gradient css
+  color: string
+  badge?: { text: string; style: string } // prueba social o escasez
 }
 
 const AUTOS: Car[] = [
@@ -31,6 +32,7 @@ const AUTOS: Car[] = [
     combustible: "Nafta",
     tipo: "nuevo",
     color: "from-blue-900/60 to-slate-900/80",
+    badge: { text: "⭐ Más consultado", style: "bg-blue-500/80 text-white" },
   },
   {
     id: 2,
@@ -62,6 +64,7 @@ const AUTOS: Car[] = [
     combustible: "Nafta",
     tipo: "usado",
     color: "from-slate-800/60 to-zinc-900/80",
+    badge: { text: "🔥 Última unidad", style: "bg-orange-500/90 text-white" },
   },
   {
     id: 5,
@@ -73,6 +76,7 @@ const AUTOS: Car[] = [
     combustible: "Diesel",
     tipo: "usado",
     color: "from-red-900/60 to-zinc-900/80",
+    badge: { text: "🔥 Última unidad", style: "bg-orange-500/90 text-white" },
   },
   {
     id: 6,
@@ -144,6 +148,14 @@ function CarCard({ car, index }: { car: Car; index: number }) {
             {car.marca}
           </span>
         </div>
+        {/* Scarcity / social proof badge */}
+        {car.badge && (
+          <div className="absolute bottom-3 left-3">
+            <span className={cn("rounded-full px-2.5 py-1 text-[10px] font-bold backdrop-blur-sm", car.badge.style)}>
+              {car.badge.text}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Content */}

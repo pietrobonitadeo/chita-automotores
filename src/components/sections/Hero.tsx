@@ -57,34 +57,34 @@ export function Hero() {
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto pt-20">
         <motion.div variants={stagger} initial="hidden" animate="visible">
 
-          {/* Badge */}
+          {/* Badge — prueba social en el primer elemento visible */}
           <motion.div variants={fadeUp} className="mb-8 flex justify-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/60 backdrop-blur-sm">
               <Car className="h-3.5 w-3.5" />
-              Concepción del Uruguay, Entre Ríos
+              +30 años · +2000 familias en Concepción del Uruguay
             </span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline — jobs to be done: el cliente quiere moverse, no "tener un auto" */}
           <motion.h1
             variants={fadeUp}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tighter text-white mb-6"
           >
-            Tu próximo auto
+            El auto que buscás
             <br />
             <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-violet-400 bg-clip-text text-transparent">
-              te está esperando
+              está acá, hoy.
             </span>
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Subheadline — especificidad genera confianza, loss aversion sutil */}
           <motion.p
             variants={fadeUp}
-            className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Autos nuevos y usados en Concepción del Uruguay, Entre Ríos.
+            Autos nuevos y usados con garantía incluida en Concepción del Uruguay.
             <br className="hidden sm:block" />
-            Financiación a tu medida, atención personalizada.
+            El auto que no comprás hoy, mañana puede no estar.
           </motion.p>
 
           {/* CTAs */}
@@ -96,7 +96,7 @@ export function Hero() {
               href="#nuevos"
               className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-bold text-zinc-900 hover:bg-white/90 transition-all duration-200 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
             >
-              Ver Autos Disponibles
+              Ver stock disponible →
             </a>
             <a
               href={WHATSAPP_URL}
@@ -105,9 +105,14 @@ export function Hero() {
               className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-200"
             >
               <MessageCircle className="h-4 w-4 text-green-400" />
-              Contactar por WhatsApp
+              Consultar sin compromiso
             </a>
           </motion.div>
+
+          {/* Microcopy de confianza — reduce fricción del CTA */}
+          <motion.p variants={fadeUp} className="mt-4 text-xs text-white/25">
+            Sin turnos · Sin papelerío · Respondemos en minutos
+          </motion.p>
 
         </motion.div>
       </div>
