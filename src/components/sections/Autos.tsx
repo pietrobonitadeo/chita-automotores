@@ -19,7 +19,8 @@ interface Car {
   combustible: string
   tipo: "nuevo" | "usado"
   color: string
-  badge?: { text: string; style: string } // prueba social o escasez
+  imagen: string
+  badge?: { text: string; style: string }
 }
 
 const AUTOS: Car[] = [
@@ -32,6 +33,7 @@ const AUTOS: Car[] = [
     combustible: "Nafta",
     tipo: "nuevo",
     color: "from-blue-900/60 to-slate-900/80",
+    imagen: "/autos/fiat cronos drive.webp",
     badge: { text: "⭐ Más consultado", style: "bg-blue-500/80 text-white" },
   },
   {
@@ -43,6 +45,7 @@ const AUTOS: Car[] = [
     combustible: "Nafta",
     tipo: "nuevo",
     color: "from-amber-900/60 to-zinc-900/80",
+    imagen: "/autos/tracker.jpg",
   },
   {
     id: 3,
@@ -53,6 +56,7 @@ const AUTOS: Car[] = [
     combustible: "Nafta",
     tipo: "nuevo",
     color: "from-yellow-900/60 to-zinc-900/80",
+    imagen: "/autos/sandero stepway.jpg",
   },
   {
     id: 4,
@@ -64,6 +68,7 @@ const AUTOS: Car[] = [
     combustible: "Nafta",
     tipo: "usado",
     color: "from-slate-800/60 to-zinc-900/80",
+    imagen: "/autos/polo track.jpg",
     badge: { text: "🔥 Última unidad", style: "bg-orange-500/90 text-white" },
   },
   {
@@ -76,6 +81,7 @@ const AUTOS: Car[] = [
     combustible: "Diesel",
     tipo: "usado",
     color: "from-red-900/60 to-zinc-900/80",
+    imagen: "/autos/hilux sr 2.0.jpg",
     badge: { text: "🔥 Última unidad", style: "bg-orange-500/90 text-white" },
   },
   {
@@ -88,6 +94,7 @@ const AUTOS: Car[] = [
     combustible: "Nafta",
     tipo: "usado",
     color: "from-indigo-900/60 to-zinc-900/80",
+    imagen: "/autos/etios xs.webp",
   },
 ]
 
@@ -116,21 +123,12 @@ function CarCard({ car, index }: { car: Car; index: number }) {
 
       {/* Image area */}
       <div className={cn("relative h-44 bg-gradient-to-br overflow-hidden", car.color)}>
-        {/* Grid lines overlay */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px)`,
-            backgroundSize: "30px 30px",
-          }}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={car.imagen}
+          alt={`${car.marca} ${car.nombre}`}
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Car silhouette placeholder */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <svg viewBox="0 0 120 50" className="w-36 opacity-20 fill-white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 35 L15 20 Q20 10 35 10 L85 10 Q100 10 105 20 L110 35 Q112 38 110 40 L10 40 Q8 38 10 35Z M25 40 A7 7 0 1 0 25 40.01 M90 40 A7 7 0 1 0 90 40.01"/>
-          </svg>
-        </div>
         {/* Badge tipo */}
         <div className="absolute top-3 left-3">
           <span className={cn(
