@@ -45,9 +45,9 @@ export function Navbar() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <a href="#inicio" className="flex flex-col leading-none select-none">
-              <span className="text-xl font-black tracking-widest text-white">CHITA</span>
-              <span className="text-[9px] font-medium tracking-[0.25em] text-white/50 uppercase">Automotores</span>
+            <a href="#inicio" className="select-none">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Chita Automotores" className="h-10 w-auto" />
             </a>
 
             {/* Desktop nav */}

@@ -30,9 +30,9 @@ export function Footer() {
 
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <a href="#inicio" className="inline-flex flex-col leading-none mb-4">
-              <span className="text-2xl font-black tracking-widest text-white">CHITA</span>
-              <span className="text-[10px] font-medium tracking-[0.25em] text-white/40 uppercase">Automotores</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <a href="#inicio" className="inline-block mb-4">
+              <img src="/logo.png" alt="Chita Automotores" className="h-12 w-auto" />
             </a>
             <p className="text-sm text-white/40 leading-relaxed max-w-xs">
               Tu próximo auto, te está esperando. Más de 30 años de confianza en Concepción del Uruguay.
